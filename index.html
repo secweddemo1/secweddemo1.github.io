@@ -1,0 +1,18 @@
+---
+layout: default
+title: "Posts"
+---
+
+<p class="title">An example of a simple blog made with <a href="http://jekyllrb.com">Jekyll</a></p>
+
+<section class="news">
+    {% for post in site.posts %}
+    <article>
+        <h1>{{ post.title }}</h1>
+        <date datetime="{{ post.date }}">{{ post.date | date_to_string }}</date>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+    
+        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+    </article>
+    {% endfor %}
+</section>
